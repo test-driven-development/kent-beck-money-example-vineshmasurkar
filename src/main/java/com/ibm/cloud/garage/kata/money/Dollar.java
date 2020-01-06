@@ -1,18 +1,8 @@
 package com.ibm.cloud.garage.kata.money;
 
-class Dollar {
-	int amount;
+class Dollar extends Money {
 
-	Dollar(int amount) {
-		this.amount = amount;
+	private Dollar(int amount, String currency) {
+		super(amount, currency);
 	}
-
-	Dollar times(int multiplier) {
-		return new Dollar(amount * multiplier);
-	}
-
-	public boolean equals(Object obj) {
-		return true;
-	}
-
 }

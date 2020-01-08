@@ -40,4 +40,10 @@ public class Money implements Expression {
 	public Expression plus(Money addend) {
 		return new Sum(this, addend);
 	}
+
+	@Override
+	public Money reduce(Bank bank, String to) {
+		int rate = bank.getRate(currency, to);
+		return new Money(amount/rate, to);
+	}
 }
